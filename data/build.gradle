@@ -1,0 +1,61 @@
+import cab.andrew.simpsonsview.Libs
+
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+kapt {
+	correctErrorTypes = true
+	useBuildCache = true
+}
+
+android {
+	compileSdkVersion buildConfig.compileSdk
+
+	defaultConfig {
+		minSdkVersion buildConfig.minSdk
+	}
+
+	compileOptions {
+		sourceCompatibility JavaVersion.VERSION_1_8
+		targetCompatibility JavaVersion.VERSION_1_8
+	}
+    flavorDimensions 'version'
+	productFlavors {
+		simpsons {
+			dimension 'version'
+			versionName 'Simpsons'
+			buildConfigField("String", "URL", "\"https://api.duckduckgo.com/?q=simpsons+characters&format=json\"")
+		}
+		wire {
+			dimension 'version'
+			versionName 'Wire'
+			buildConfigField("String", "URL", "\"https://api.duckduckgo.com/?q=wire+characters&format=json\"")
+		}
+	}
+}
+
+
+
+
+dependencies {
+	api project(':base')
+
+	implementation Libs.AndroidX.collection
+
+	api Libs.store
+	api Libs.AndroidX.Paging.common
+	api Libs.threeTenBpNoTzdb
+
+	implementation Libs.AndroidX.Room.runtime
+	implementation Libs.AndroidX.Room.ktx
+	kapt Libs.AndroidX.Room.compiler
+
+	implementation Libs.AndroidX.Lifecycle.livedata
+	implementation Libs.Retrofit.retrofit
+	implementation Libs.Retrofit.moshiConverter
+	implementation Libs.moshi
+	implementation Libs.moshiKt
+	kapt 'com.squareup.moshi:moshi-kotlin-codegen:1.9.1'
+}

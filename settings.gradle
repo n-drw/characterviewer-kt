@@ -1,0 +1,9 @@
+include ':ui-character-details'
+include ':ui-about'
+include ':ui-discover'
+include ':navigation'
+include ':base'
+include ':data'
+include ':common-ui-view'
+include ':app'
+rootProject.name = "simpsons view"

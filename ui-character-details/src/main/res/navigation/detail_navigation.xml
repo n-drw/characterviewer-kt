@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:id="@+id/detail_navigation"
+	app:startDestination="@id/characterDetail">
+
+	<fragment
+		android:id="@+id/characterDetail"
+		android:name="cab.andrew.ui_character_details.CharacterDetail"
+		android:label="CharacterDetail" />
+</navigation>

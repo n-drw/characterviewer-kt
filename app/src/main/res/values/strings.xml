@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Simpsons View</string>
+	<string name="discover_title">discover</string>
+	<string name="about_title">about</string>
+</resources>

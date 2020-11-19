@@ -1,0 +1,22 @@
+<resources>
+	<string name="about_name">Candidate: Andrew Cabrera</string>
+	<string name="about_me">This is my about me</string>
+	<string name="about_task">Comcast Character Viewer</string>
+	<string name="about_requirements">
+	Write a sample app that fetches and displays data from a RESTful Web API. The app should be comprised of two parts, a list and a detail. On Phones, the list and detail should be separate screens, on Tablets, list and detail should appear on the same screen. Your app should be written either in Swift for iOS, or Kotlin for Android.
+For the list view, data should be displayed as a text only, vertically scrollable list of character names
+The app should offer search functionality that filters the character list according to characters whose titles or descriptions contain the
+query text.</string>
+	<string name="req1">
+	- Clicking on an item should load the detail view of that character, including the character’s image, title, and description. You choose the layout.
+	</string>
+	<string name="req2">
+	- For the image in the detail view, use the URL in the "Icon" field of the API JSON response. For items with blank or missing image URLs, use a placeholder image of your choice.
+	</string>
+	<string name="req3">
+	- Two variants of the app should be created, using a single shared codebase. Each variant should have a different name, package-name, and url that it pulls data from. (We\'re interested in your methodology for creating multiple apps from a shared codebase)
+	</string>
+	<string name="about_stack">Built in Kotlin using: Hilt, Jetpack Navigation, Material, Coroutines, Moshi, Retrofit, Glide, Room</string>
+	<string name="about_dependencies">Leak Canary for leaks, Timber for logging</string>
+	<string name="website">https://andrew.cab</string>
+</resources>

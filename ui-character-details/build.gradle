@@ -1,0 +1,93 @@
+import cab.andrew.simpsonsview.Libs
+
+plugins {
+	id 'com.android.library'
+	id 'kotlin-android'
+	id 'kotlin-kapt'
+	id 'dagger.hilt.android.plugin'
+	id 'kotlin-android-extensions'
+	id 'androidx.navigation.safeargs'
+}
+
+kapt {
+	correctErrorTypes = true
+	useBuildCache = true
+}
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.2"
+
+    defaultConfig {
+        minSdkVersion 23
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+	buildFeatures {
+		viewBinding true
+		dataBinding true
+	}
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    flavorDimensions 'version'
+    productFlavors {
+        simpsons {
+            dimension 'version'
+        }
+        wire {
+            dimension 'version'
+        }
+    }
+}
+
+dependencies {
+	implementation Libs.AndroidX.Lifecycle.livedata
+	implementation Libs.AndroidX.Lifecycle.viewmodel
+
+	implementation Libs.AndroidX.appcompat
+	implementation Libs.AndroidX.coreKtx
+	implementation Libs.AndroidX.Fragment.fragment
+	implementation Libs.AndroidX.Fragment.fragmentKtx
+	implementation Libs.AndroidX.Navigation.fragment
+	implementation Libs.AndroidX.swiperefresh
+	implementation Libs.AndroidX.recyclerview
+	implementation Libs.AndroidX.constraintlayout
+
+	implementation Libs.Mdc.material
+
+	implementation Libs.koinAndroid
+	implementation Libs.koinAndroidX
+	implementation Libs.koinAndroidXViewModel
+	implementation Libs.koinAndroidXFragment
+
+	implementation Libs.Hilt.library
+	implementation project(path: ':data')
+	implementation project(path: ':base')
+	implementation Libs.Hilt.library
+	kapt Libs.Hilt.compiler
+
+	implementation Libs.AndroidX.Hilt.viewmodel
+	kapt Libs.AndroidX.Hilt.compiler
+
+	implementation Libs.glide
+	kapt Libs.glideCompiler
+
+}
+
+

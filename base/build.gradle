@@ -1,0 +1,15 @@
+import cab.andrew.simpsonsview.Libs
+
+apply plugin: 'kotlin'
+
+
+dependencies {
+	api Libs.Kotlin.stdlib
+
+	api Libs.Coroutines.core
+
+	api Libs.Dagger.dagger
+
+	api Libs.Retrofit.retrofit
+	api Libs.OkHttp.loggingInterceptor
+}
